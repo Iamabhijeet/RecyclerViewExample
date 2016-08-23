@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">RecyclerView Example</string>
+    <string-array name="nm">
+        <item>abhi</item>
+        <item>abhijeet</item>
+        <item>abhishek</item>
+        <item>abhirukh</item>
+        <item>abhirudh</item>
+    </string-array>
+    <string-array name="num">
+        <item>8238989988</item>
+        <item>8238989982</item>
+        <item>8238989983</item>
+        <item>8238989984</item>
+        <item>8238989985</item>
+    </string-array>
+</resources>
