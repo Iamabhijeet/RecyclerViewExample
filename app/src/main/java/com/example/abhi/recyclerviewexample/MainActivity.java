@@ -5,15 +5,23 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.app.Activity;
+import android.media.MediaPlayer;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity  {
     Toolbar toolbar;
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
@@ -54,16 +62,32 @@ public class MainActivity extends AppCompatActivity {
 //       int i=0;
 //
 //        for (String NAME : ){
+                if (TextUtils.isEmpty(Name) || TextUtils.isEmpty(Number)) {
+                    if (TextUtils.isEmpty(Name)) {
+                        etName.setError("Enter Name!!");
+                    } else {
+                        etNumber.setError("Enter Number!!");
 
-                Contacts contacts = new Contacts(Name, Number);
-                contact.add(contacts);
+                    }
+                } else {
+
+                    Contacts contacts = new Contacts(Name, Number);
+                    contact.add(contacts);
+
 //            Toast.makeText(MainActivity.this, Name[i], Toast.LENGTH_SHORT).show();
-                // i++;
+                    // i++;
 
-                adapter = new ContactAdapter(contact, MainActivity.this);
-                recyclerView.setAdapter(adapter);
+                    adapter = new ContactAdapter(contact, MainActivity.this);
+                    recyclerView.setAdapter(adapter);
+                    etName.setText("");
+                    etNumber.setText("");
 
+                }
             }
         });
     }
+
+
+
+
 }
