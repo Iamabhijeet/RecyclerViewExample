@@ -1,5 +1,6 @@
 package com.example.abhi.recyclerviewexample;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -9,15 +10,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
-import android.app.Activity;
-import android.media.MediaPlayer;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
+
 
 import java.util.ArrayList;
 
@@ -29,18 +22,37 @@ public class MainActivity extends AppCompatActivity  {
     ArrayList<Contacts> contact = new ArrayList<>();
     EditText etName, etNumber;
     Button btAddContact;
-    ArrayList<Contacts> createContact = new ArrayList<>();
+    //Contacts econtact;
+    ArrayList<Contacts> econtact;
 
+    //ArrayList<Contacts> createContact = new ArrayList<>();
+
+   int position;
+//
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+//        Intent Eintent = getIntent();
+//        Bundle args = Eintent.getBundleExtra("BUNDLE");
+//        econtact  = (ArrayList<Contacts>) args.getSerializable("ARRAYLIST");
+//        position=   Integer.parseInt(args.getString("Position_no"));
+//        contact.addAll(position,econtact);
+//        Bundle bun = getIntent().getExtras();
+//        if (bun != null) {
+//            position = Integer.parseInt(bun.getString("Position_no"));
+//            econtact="Arraylist_element";
+////        element = bun.getString("EContact_thing");
+////        contact.add(position,element);
+////
+//        }
         setContentView(R.layout.activity_main);
         etName = (EditText) findViewById(R.id.etName);
         etNumber = (EditText) findViewById(R.id.etNumber);
         btAddContact = (Button) findViewById(R.id.btAddContact);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
 
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         layoutManager = new LinearLayoutManager(this);
@@ -87,7 +99,34 @@ public class MainActivity extends AppCompatActivity  {
         });
     }
 
+//    @Override
+//    protected void onStart() {
+//        super.onStart();
+//        Intent Eintent = getIntent();
+//        Bundle args = Eintent.getBundleExtra("BUNDLE");
+//        econtact  = (ArrayList<Contacts>) args.getSerializable("ARRAYLIST");
+//        position=   Integer.parseInt(args.getString("Position_no"));
+//        contact.addAll(position,econtact);
+//    }
 
-
-
+//
+//    @Override
+//    protected void onPause() {
+//        super.onPause();
+//        Intent Eintent = getIntent();
+//        Bundle args = Eintent.getBundleExtra("BUNDLE");
+//        econtact  = (ArrayList<Contacts>) args.getSerializable("ARRAYLIST");
+//        position=   Integer.parseInt(args.getString("Position_no"));
+//        contact.addAll(position,econtact);
+//    }
+//
+//    @Override
+//    protected void onResume() {
+//        super.onResume();
+//        Intent Eintent = getIntent();
+//        Bundle args = Eintent.getBundleExtra("BUNDLE");
+//        econtact  = (ArrayList<Contacts>) args.getSerializable("ARRAYLIST");
+//        position=   Integer.parseInt(args.getString("Position_no"));
+//        contact.addAll(position,econtact);
+//    }
 }

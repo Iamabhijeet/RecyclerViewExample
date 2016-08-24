@@ -1,6 +1,7 @@
 package com.example.abhi.recyclerviewexample;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -72,7 +73,7 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactV
             this.mainActivity = mainActivity;
             cardView = (CardView) itemView.findViewById(R.id.cardView);
             //cardView.setOnLongClickListener(mainActivity);
-           cardView.setOnClickListener(this);
+           tvName.setOnClickListener(this);
 
         }
 
@@ -80,6 +81,16 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactV
         @Override
         public void onClick(View view) {
 
+            Toast.makeText(context,"i am clicked",Toast.LENGTH_SHORT).show();
+
+            int position = getAdapterPosition();
+                // your changes
+            Intent CAintent = new Intent(context, EditContact.class);
+            CAintent.putExtra("Adapter_Position", position);
+            context.startActivity(CAintent);
+                notifyDataSetChanged();
+            }
         }
-    }
+
+
 }
